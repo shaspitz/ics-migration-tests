@@ -4,7 +4,7 @@ go 1.20
 
 require (
 	github.com/cosmos/interchain-security v1.2.0-multiden
-	github.com/cosmos/interchain-security/v2 v2.0.0-rc1
+	github.com/cosmos/interchain-security/v2 v2.0.0-20230602185753-ba2581c337e3 // See https://github.com/cosmos/interchain-security/tree/shawn%2Ftesting-v1v2-stuff
 	github.com/stretchr/testify v1.8.4
 )
 
@@ -126,9 +126,9 @@ require (
 
 replace (
 	github.com/btcsuite/btcd => github.com/btcsuite/btcd v1.0.1
-	// github.com/btcsuite/btcd => github.com/btcsuite/btcd v1.0.1
-	// github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.45.15-ics
 	github.com/cosmos/btcutil => github.com/cosmos/btcutil v1.0.5
+	// github.com/btcsuite/btcd => github.com/btcsuite/btcd v1.0.1
+	github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.45.15-ics
 	github.com/gogo/protobuf => github.com/regen-network/protobuf v1.3.3-alpha.regen.1
 	github.com/tendermint/tendermint => github.com/cometbft/cometbft v0.34.28
 // google.golang.org/grpc => google.golang.org/grpc v1.33.2
