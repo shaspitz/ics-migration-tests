@@ -3,10 +3,10 @@ module github.com/smarshall-spitzbart/ics-migration-tests
 go 1.20
 
 require (
-	github.com/cosmos/interchain-security v1.2.0-multiden
+	github.com/cosmos/interchain-security v1.1.0-multiden
 	// see: https://github.com/cosmos/interchain-security/commit/5a9dbf0722fd418ba65a1c610c236b12b1c1bf25
 	// from https://github.com/cosmos/interchain-security/tree/shawn%2Ftesting-proper-cosumer-keys
-	github.com/cosmos/interchain-security/v2 v2.0.0-20230602201052-5a9dbf0722fd 
+	github.com/cosmos/interchain-security/v2 v2.0.0-20230602201052-5a9dbf0722fd
 	github.com/stretchr/testify v1.8.4
 )
 
@@ -127,7 +127,7 @@ require (
 )
 
 replace (
-	github.com/btcsuite/btcd => github.com/btcsuite/btcd v1.0.1
+	// github.com/btcsuite/btcd => github.com/btcsuite/btcd v1.0.3
 	github.com/cosmos/btcutil => github.com/cosmos/btcutil v1.0.5
 	// github.com/btcsuite/btcd => github.com/btcsuite/btcd v1.0.1
 	github.com/cosmos/cosmos-sdk => github.com/cosmos/cosmos-sdk v0.45.15-ics
