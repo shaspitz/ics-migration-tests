@@ -4,7 +4,9 @@ go 1.20
 
 require (
 	github.com/cosmos/interchain-security v1.2.0-multiden
-	github.com/cosmos/interchain-security/v2 v2.0.0-20230602185753-ba2581c337e3 // See https://github.com/cosmos/interchain-security/tree/shawn%2Ftesting-v1v2-stuff
+	// see: https://github.com/cosmos/interchain-security/commit/5a9dbf0722fd418ba65a1c610c236b12b1c1bf25
+	// from https://github.com/cosmos/interchain-security/tree/shawn%2Ftesting-proper-cosumer-keys
+	github.com/cosmos/interchain-security/v2 v2.0.0-20230602201052-5a9dbf0722fd 
 	github.com/stretchr/testify v1.8.4
 )
 

@@ -8,7 +8,7 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
-func TestICSKeys(t *testing.T) {
+func TestICSConsumerKeyPrefixes(t *testing.T) {
 
 	require.Equal(t, consumertypesv1.PortByteKey, consumertypesv2.PortByteKey)
 	require.Equal(t, consumertypesv1.LastDistributionTransmissionByteKey, consumertypesv2.LastDistributionTransmissionByteKey)
@@ -19,8 +19,7 @@ func TestICSKeys(t *testing.T) {
 	require.Equal(t, consumertypesv1.PendingDataPacketsByteKey, consumertypesv2.PendingDataPacketsByteKey)
 	require.Equal(t, consumertypesv1.PreCCVByteKey, consumertypesv2.PreCCVByteKey)
 	require.Equal(t, consumertypesv1.InitialValSetByteKey, consumertypesv2.InitialValSetByteKey)
-	// missing key!!!!!! v2 branch is incorrect
-	// require.Equal(t, consumertypesv1.LastStandaloneHeightByteKey, consumertypesv2.LastStandaloneHeightByteKey)
+	require.Equal(t, consumertypesv1.LastStandaloneHeightByteKey, consumertypesv2.LastStandaloneHeightByteKey)
 	require.Equal(t, consumertypesv1.SmallestNonOptOutPowerByteKey, consumertypesv2.SmallestNonOptOutPowerByteKey)
 	require.Equal(t, consumertypesv1.HistoricalInfoBytePrefix, consumertypesv2.HistoricalInfoBytePrefix)
 	require.Equal(t, consumertypesv1.PacketMaturityTimeBytePrefix, consumertypesv2.PacketMaturityTimeBytePrefix)
@@ -28,4 +27,10 @@ func TestICSKeys(t *testing.T) {
 	require.Equal(t, consumertypesv1.OutstandingDowntimeBytePrefix, consumertypesv2.OutstandingDowntimeBytePrefix)
 	require.Equal(t, consumertypesv1.PendingDataPacketsBytePrefix, consumertypesv2.PendingDataPacketsBytePrefix)
 	require.Equal(t, consumertypesv1.CrossChainValidatorBytePrefix, consumertypesv2.CrossChainValidatorBytePrefix)
+
+	// three new keys in v2, need to be higher enum value than highest existing prefix
+	highestV1prefix := consumertypesv1.CrossChainValidatorBytePrefix
+	require.Greater(t, consumertypesv2.InitGenesisHeightByteKey, highestV1prefix)
+	require.Greater(t, consumertypesv2.StandaloneTransferChannelIDByteKey, consumertypesv2.InitGenesisHeightByteKey)
+	require.Greater(t, consumertypesv2.PrevStandaloneChainByteKey, consumertypesv2.StandaloneTransferChannelIDByteKey)
 }
