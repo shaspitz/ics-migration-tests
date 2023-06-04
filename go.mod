@@ -4,9 +4,9 @@ go 1.20
 
 require (
 	github.com/cosmos/interchain-security v1.2.0-multiden
-	// see: https://github.com/cosmos/interchain-security/commit/5a9dbf0722fd418ba65a1c610c236b12b1c1bf25
-	// from https://github.com/cosmos/interchain-security/tree/shawn%2Ftesting-proper-cosumer-keys
-	github.com/cosmos/interchain-security/v2 v2.0.0-20230602201052-5a9dbf0722fd 
+	// see: https://github.com/cosmos/interchain-security/commit/18cace86f16de3bfab3f9bdf92e8d306bc94eeff
+	// from https://github.com/cosmos/interchain-security/tree/shawn%2Fcombo-for-migration-tests
+	github.com/cosmos/interchain-security/v2 v2.0.0-20230604202618-18cace86f16d
 	github.com/stretchr/testify v1.8.4
 )
 
@@ -57,6 +57,7 @@ require (
 	github.com/godbus/dbus v0.0.0-20190726142602-4481cbc300e2 // indirect
 	github.com/gogo/protobuf v1.3.3 // indirect
 	github.com/golang/glog v1.0.0 // indirect
+	github.com/golang/mock v1.6.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
 	github.com/google/btree v1.1.2 // indirect
@@ -84,6 +85,7 @@ require (
 	github.com/mimoo/StrobeGo v0.0.0-20210601165009-122bf33a46e0 // indirect
 	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/mtibben/percent v0.2.1 // indirect
+	github.com/oxyno-zeta/gomock-extra-matcher v1.1.0 // indirect
 	github.com/pelletier/go-toml v1.9.5 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.5 // indirect
 	github.com/petermattis/goid v0.0.0-20180202154549-b0b1615b78e5 // indirect

@@ -3,10 +3,38 @@ package main
 import (
 	"testing"
 
+	ccvtestutilv1 "github.com/cosmos/interchain-security/testutil/keeper"
+	ccvtestutilv2 "github.com/cosmos/interchain-security/v2/testutil/keeper"
 	consumertypesv2 "github.com/cosmos/interchain-security/v2/x/ccv/consumer/types"
 	consumertypesv1 "github.com/cosmos/interchain-security/x/ccv/consumer/types"
+	ccvtypesv1 "github.com/cosmos/interchain-security/x/ccv/types"
 	"github.com/stretchr/testify/require"
 )
+
+func TestSetPendingPackets(t *testing.T) {
+
+	keeperParamsv1 := ccvtestutilv1.NewInMemKeeperParams(t)
+	consumerKeeperv1, ctx, ctrl, _ := ccvtestutilv1.GetConsumerKeeperAndCtx(t, keeperParamsv1)
+	defer ctrl.Finish()
+
+	require.Empty(t, consumerKeeperv1.GetPendingPackets(ctx).List)
+	consumerKeeperv1.SetPendingPackets(ctx, ccvtypesv1.ConsumerPacketDataList{List: []ccvtypesv1.ConsumerPacketData{{}, {}}})
+	require.Len(t, consumerKeeperv1.GetPendingPackets(ctx).List, 2)
+
+	// Transfer store ownership to v2 keeper
+	keeperParamsv2 := ccvtestutilv2.InMemKeeperParams{
+		Cdc:            keeperParamsv1.Cdc,
+		StoreKey:       keeperParamsv1.StoreKey,
+		ParamsSubspace: keeperParamsv1.ParamsSubspace,
+		Ctx:            keeperParamsv1.Ctx,
+	}
+
+	consumerKeeperv2, ctx, ctrl, _ := ccvtestutilv2.GetConsumerKeeperAndCtx(t, keeperParamsv2)
+	defer ctrl.Finish()
+
+	// v2 keeper should be able to read v1 data
+	require.Len(t, consumerKeeperv2.GetPendingPackets(ctx).List, 2)
+}
 
 func TestICSConsumerKeyPrefixes(t *testing.T) {
 
