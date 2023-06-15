@@ -6,7 +6,7 @@ require (
 	github.com/cosmos/interchain-security v1.1.0-multiden
 	// see: https://github.com/cosmos/interchain-security/commit/5a9dbf0722fd418ba65a1c610c236b12b1c1bf25
 	// from https://github.com/cosmos/interchain-security/tree/shawn%2Ftesting-proper-cosumer-keys
-	github.com/cosmos/interchain-security/v2 v2.0.0-20230602201052-5a9dbf0722fd
+	github.com/cosmos/interchain-security/v2 v2.0.0-rc2
 	github.com/stretchr/testify v1.8.4
 )
 
